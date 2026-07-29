@@ -6,8 +6,8 @@ import MobileMenu from "./MobileMenu";
 
 const NavItems = [
   { path: "/", text: "Home", icon: Home },
-  { path: "/timeline", text: "Timeline", icon: Clock3 },
-  { path: "/stats", text: "Stats", icon: ChartNoAxesColumn },
+  { path: "/Timeline", text: "Timeline", icon: Clock3 },
+  { path: "/Stats", text: "Stats", icon: ChartNoAxesColumn },
 ]
 
 const Navbar = () => {

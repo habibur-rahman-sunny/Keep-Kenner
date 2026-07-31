@@ -4,7 +4,9 @@ import { createContext, useEffect, useState } from "react";
 
 export const FdContext = createContext();
 const FdProvider = ({children}) => {
-
+    // For Timeline page
+    const [history, setHistory] = useState([])
+    // For Homepage
     const [friends, setFriends] = useState([])
     useEffect(() => {
         fetch("/data.json")
@@ -15,6 +17,8 @@ const FdProvider = ({children}) => {
     const value = {
         friends,
         setFriends,
+        history,
+        setHistory
     }
     
     return (

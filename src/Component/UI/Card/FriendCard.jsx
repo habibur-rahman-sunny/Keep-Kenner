@@ -6,13 +6,8 @@ const FriendCard = ({ friend }) => {
         id,
         name,
         picture,
-        email,
-        days_since_contact,
         status,
         tags,
-        bio,
-        goal,
-        next_due_date,
     } = friend;
 
 

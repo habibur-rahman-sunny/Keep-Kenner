@@ -1,15 +1,12 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import FriendCard from "../UI/Card/FriendCard";
+import { FdContext } from "@/app/Context/context";
 
 const FriendsList = () => {
-    const [friends, setFriends] = useState([])
-    useEffect(() => {
-        fetch("/data.json")
-            .then(res => res.json())
-            .then(data => setFriends(data))
-    }, [])
+    
+    const {friends} = useContext(FdContext)
     return (
         <div className=" my-20">
                 <h1 className="text-start text-3xl font-medium">Your Friends</h1>

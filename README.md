@@ -27,10 +27,6 @@ Keep-Keener is a simple and user-friendly web application that helps users manag
 - Clean interface with Tailwind CSS.
 - Fast navigation using Next.js routing.
 
-## Live Demo
-
-[Add your Vercel Live Link Here]
-
 ## Repository
 
 [https://github.com/habibur-rahman-sunny/Keep-Keener]

@@ -32,7 +32,8 @@ const DetailsPage = () => {
 
     return (
 
-        <div className="grid md:grid-cols-5 max-w-6xl mx-auto gap-4 my-20">
+        <div className="bg-slate-50">
+            <div className="grid md:grid-cols-5 max-w-6xl mx-auto gap-4 py-20">
 
             {/* Left Side */}
             <div className="col-span-2.5 md:col-span-2 grid grid-rows-8 gap-2">
@@ -46,7 +47,7 @@ const DetailsPage = () => {
                     />
                     <h2 className="font-bold text-xl mt-3 text-gray-800">{name}</h2>
                     <div className="flex flex-col space-y-2 w-6/12 mx-auto">
-                        <span className="bg-red-500 text-white text-sm px-3 py-1 rounded-full mt-2">
+                        <span className={`${status === "ON_TRACK" ? "bg-green-800 text-white" : status === "OVERDUE" ? "bg-red-500 text-white" : "bg-yellow-400"} text-sm px-3 py-1 rounded-full mt-2`}>
                             {status}
                         </span>
                         <span className="space-y-2">
@@ -80,7 +81,6 @@ const DetailsPage = () => {
                 </div>
 
             </div>
-
 
 
             {/* Right Side */}
@@ -122,9 +122,8 @@ const DetailsPage = () => {
                     <h2 className="font-semibold text-green-900 mb-4">Quick Check-In</h2>
                     <CommunicationBtn name={name} next_due_date={next_due_date}></CommunicationBtn>
                 </div>
-
             </div>
-
+        </div>
         </div>
     );
 };

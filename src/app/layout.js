@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/Component/Shared/Navbar/Navbar";
 import Footer from "@/Component/Shared/Footer/Footer";
 import Provider from "./Lib/Provider";
+import ToastPage from "./Toast/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,13 +27,16 @@ export default function RootLayout({ children }) {
       data-theme="forest"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         <Provider>
-          <Navbar></Navbar>
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer></Footer>
+          <div className="min-h-screen flex flex-col">
+            <Navbar></Navbar>
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer></Footer>
+            <ToastPage/>
+          </div>
         </Provider>
       </body>
     </html>

@@ -12,7 +12,7 @@ const FriendCard = ({ friend }) => {
 
 
     return (
-        <Link href={`/Details/${id}`} className="w-full h-full text-center items-center space-y-4 p-4 bg-white rounded-xl shadow-sm">
+        <Link href={`/Details/${id}`} className="w-full h-full text-center items-center space-y-4 p-4 bg-white rounded-xl shadow-sm hover:bg-green-50">
             <div>
                 <Image className="w-30 mx-auto rounded-full"
                     src={picture}

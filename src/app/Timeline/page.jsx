@@ -7,43 +7,37 @@ const TimelinePage = () => {
     // For filter
     const [filter, setFilter] = useState("all")
     const { history, callCount, messageCount, videoCount } = useContext(FdContext)
-    const filteredHistory = filter === 'all'? history: (history.filter(Item => Item.type === filter))
+    const filteredHistory = filter === 'all' ? history : (history.filter(Item => Item.type === filter))
 
-   
+
     return (
         <div className='bg-slate-50'>
             <div className="max-w-6xl w-full mx-auto px-4 py-26">
                 <h1 className="font-bold text-3xl text-gray-900 mb-6">Timeline</h1>
 
-                {/* For Filter */}
-                <div className='flex flex-wrap gap-3 mb-8'>
-                    <button 
-                    onClick={()=>{setFilter("all")}}
-                    className={`btn ${filter === "all"? "btn-primary": "btn-outline"}`}
+                {/* Dropdown Filter */}
+                <div className="mb-8">
+                    <select
+                        value={filter}
+                        onChange={(e) => setFilter(e.target.value)}
+                        className="border border-gray-300 rounded-sm px-4 py-2 bg-white text-gray-700"
                     >
-                        All({filteredHistory.length})
-                    </button>
+                        <option value="all">
+                            All ({history.length})
+                        </option>
 
-                    <button 
-                    onClick={()=>{setFilter("call")}}
-                    className={`btn ${filter === "call"? "btn-primary": "btn-outline"}`}
-                    >
-                        Call({callCount})
-                    </button>
+                        <option value="call">
+                            Call ({callCount})
+                        </option>
 
-                    <button 
-                    onClick={()=>{setFilter("message")}}
-                    className={`btn ${filter === "message"? "btn-primary": "btn-outline"}`}
-                    >
-                        Message({messageCount})
-                    </button>
+                        <option value="message">
+                            Message ({messageCount})
+                        </option>
 
-                    <button 
-                    onClick={()=>{setFilter("video")}}
-                    className={`btn ${filter === "video"? "btn-primary": "btn-outline"}`}
-                    >
-                        Video({videoCount})
-                    </button>
+                        <option value="video">
+                            Video ({videoCount})
+                        </option>
+                    </select>
                 </div>
                 {/* Direct mapping and parameter destructuring */}
                 <div className="flex flex-col gap-3">

@@ -10,6 +10,8 @@ const TimelinePage = () => {
             <div className="max-w-6xl w-full mx-auto px-4 py-26">
                 <h1 className="font-bold text-3xl text-gray-900 mb-6">Timeline</h1>
 
+                {/* For Filter */}
+
                 {/* Direct mapping and parameter destructuring */}
                 <div className="flex flex-col gap-3">
                     {history?.map(({ name, type, next_due_date }, index) => (

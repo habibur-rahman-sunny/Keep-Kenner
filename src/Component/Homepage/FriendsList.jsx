@@ -6,7 +6,15 @@ import { FdContext } from "@/app/Context/context";
 
 const FriendsList = () => {
     
-    const {friends} = useContext(FdContext)
+    const {friends, loading} = useContext(FdContext)
+    console.log(loading);
+     if (loading) {
+        return (
+            <div className="my-20 text-center">
+                <span className="loading loading-spinner loading-lg"></span>
+            </div>
+        );
+    }
     return (
         <div className=" my-20">
                 <h1 className="text-start text-3xl font-medium">Your Friends</h1>

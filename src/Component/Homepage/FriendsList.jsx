@@ -7,7 +7,6 @@ import { FdContext } from "@/app/Context/context";
 const FriendsList = () => {
     
     const {friends, loading} = useContext(FdContext)
-    console.log(loading);
      if (loading) {
         return (
             <div className="my-20 text-center">

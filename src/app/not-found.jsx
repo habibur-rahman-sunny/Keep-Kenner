@@ -1,29 +1,46 @@
-import Image from "next/image";
-import Link from "next/link";
+'use client';
 
-const AppNotFound = ({ title, message }) => {
-    return (
-        <div className="flex flex-col items-center justify-center py-24 text-center">
-            <Image
-                src="/images/App-Error.png"
-                alt="Not Found"
-                width={200}
-                height={200}            />
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
-            <h2 className="text-4xl font-bold text-[#001D3D] mb-4">
-                {title}
-            </h2>
-
-            <p className="text-gray-500 text-lg max-w-xl">
-                {message}
-            </p>
-            <Link href="/Checkout">
-                <button className="btn mt-6 bg-[#7C4DFF] hover:bg-[#6c3df5] text-white border-none px-6">
-                    Go Back Checkout
-                </button>
-            </Link>
+const ErrorPage = () => {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-12">
+      <div className="text-center flex flex-col items-center justify-center max-w-lg mx-auto">
+        
+        {/* Image */}
+        <div className="mb-6 relative">
+          <Image
+            src="/images/error-404.png"
+            alt="Page Not Found"
+            width={220}
+            height={220}
+            priority
+            className="object-contain"
+          />
         </div>
-    );
+
+        {/* Title */}
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 tracking-tight">
+          Page Not Found
+        </h1>
+
+        {/* Description */}
+        <p className="text-gray-600 mt-3 text-base sm:text-lg max-w-md">
+          Sorry, the page you are looking for doesn’t exist or has been moved.
+        </p>
+
+        {/* Button */}
+        <Link href="/" passHref>
+          <button className="mt-8 px-6 py-3 bg-[#7C4DFF] hover:bg-[#6c3df5] text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer">
+            Go Back Home
+          </button>
+        </Link>
+
+      </div>
+    </div>
+  );
 };
 
-export default AppNotFound;
+export default ErrorPage;

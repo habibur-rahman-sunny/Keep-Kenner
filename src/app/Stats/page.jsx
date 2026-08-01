@@ -4,20 +4,7 @@ import { Pie, PieChart, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { FdContext } from "../Context/context";
 
 const Dashboard = () => {
-  const { history } = useContext(FdContext)
-
-  const callCount = history.filter(
-    item => item.type === "call"
-  ).length;
-
-  const messageCount = history.filter(
-    item => item.type === "message"
-  ).length;
-
-  const videoCount = history.filter(
-    item => item.type === "video"
-  ).length;
-
+  const { callCount, messageCount, videoCount } = useContext(FdContext)
 
   const data = [
     {

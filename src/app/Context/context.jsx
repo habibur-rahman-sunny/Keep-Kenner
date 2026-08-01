@@ -19,12 +19,28 @@ const FdProvider = ({ children }) => {
             })
     }, [])
 
+    // For Timeline page
+    const callCount = history.filter(
+        item => item.type === "call"
+    ).length;
+
+    const messageCount = history.filter(
+        item => item.type === "message"
+    ).length;
+
+    const videoCount = history.filter(
+        item => item.type === "video"
+    ).length;
+
     const value = {
         friends,
         setFriends,
         history,
         setHistory,
-        loading
+        loading,
+        callCount,
+        messageCount,
+        videoCount
     }
 
     return (
